@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Histórico de Encomendas{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Histórico de Encomendas</h1>
+
+<table style="width: 100%; text-align: center;">
+    <thead>
+        <tr>
+            <th>ID da Encomenda</th>
+            <th>Unidade</th>
+            <th>Tipo de Encomenda</th>
+            <th>Nome do Porteiro que Recebeu</th>
+            <th>Data de Recebimento</th>
+            <th>Nome do Morador</th>
+            <th>Nome do Porteiro que Entregou</th>
+            <th>Data de Retirada</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for encomenda in encomendas_retiradas %}
+        <tr>
+            <td>{{ encomenda.id }}</td>
+            <td>{{ encomenda.unidade }}</td>
+            <td>{{ encomenda.tipo }}</td>
+            <td>{{ encomenda.porteiro_recebimento }}</td>
+            <td>{{ encomenda.data_recebimento.strftime('%d-%m-%Y') }}</td>
+            <td>{{ encomenda.morador_retirada }}</td>
+            <td>{{ encomenda.porteiro_entrega }}</td>
+            <td>{{ encomenda.data_retirada.strftime('%d-%m-%Y') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

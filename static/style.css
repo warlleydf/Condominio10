@@ -1,0 +1,121 @@
+/* styles.css */
+
+/* Estilo do Menu */
+nav {
+    background-color: #606263;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f6f3f3;
+    font-size: 16px;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Centralizando a tabela */
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.centered-table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.centered-table thead {
+    background-color: #626161;
+    color: white;
+}
+
+.centered-table th, .centered-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilo da Tabela no Histórico */
+thead {
+    background-color: #ccc;
+    color: black;
+    border: 2px solid #000000;
+    padding: 8px;
+}
+
+thead th {
+    text-align: center;
+}
+
+/* Estilo do Formulário de Dar Baixa */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form div {
+    margin-bottom: 50px;
+}
+
+form div label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form div input, form div select {       
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    max-width: 100%;
+}
+
+form div input {
+    width: 100%;
+}
+
+/* Estilo do Botão de Dar Baixa */
+form div input[type="submit"] {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+form div input[type="submit"]:hover {
+    background-color: darkgreen;
+}
+
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 20px;
+}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Dar Baixa em Encomenda{% endblock %}
+
+{% block content %}
+
+
+<div class="table-container">
+    <h2 style="font-size: 30px;">Encomendas Pendentes</h2>
+    <table class="centered-table">
+        <thead>
+            <tr>
+                <th>ID da Encomenda</th>
+                <th>Tipo de Encomenda</th>
+                <th>Nome do Porteiro que Recebeu</th>
+                <th>Data de Recebimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for encomenda in encomendas_pendentes %}
+            <tr>
+                <td>{{ encomenda.id }}</td>
+                <td>{{ encomenda.tipo}}</td>
+                <td>{{ encomenda.porteiro_recebimento }}</td>
+                <td>{{ encomenda.data_recebimento.strftime('%d-%m-%Y') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Espaço em branco -->
+<br>
+
+<!-- Linha preta grossa -->
+<hr style="border: 2px solid black;">
+
+<!-- Espaço em branco -->
+<h1 style="text-align: center; font-size: 30px;">Dar Baixa em Encomenda</h1>
+<br>
+<form method="POST" style="width: 100%; text-align: center;">
+    {{ form.hidden_tag() }}
+
+    <div style="margin-bottom: 15px;">
+        <label style="font-size: 1.2em; display: inline-block; width: 200px; text-align: right;">ID da Encomenda:</label>
+        {{ form.id(style="width: 100px; font-size: 1.2em; margin-top: 5px; display: inline-block;") }}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label style="font-size: 1.2em; display: inline-block; width: 200px; text-align: right;">Nome do Morador:</label>
+        {{ form.morador_retirada(style="width: 300px; font-size: 1.2em; margin-top: 5px; display: inline-block;") }}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label style="font-size: 1.2em; display: inline-block; width: 200px; text-align: right;">Nome do Porteiro:</label>
+        {{ form.porteiro_entrega(style="width: 300px; font-size: 1.2em; margin-top: 5px; display: inline-block;") }}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label style="font-size: 1.2em; display: inline-block; width: 200px; text-align: right;">Data de Retirada:</label>
+        {{ form.data_retirada(style="width: 125px; font-size: 1.2em; margin-top: 5px; display: inline-block;") }}
+    </div>
+
+    <div>
+        {{ form.submit(class="btn btn-success", style="font-size: 1.2em; text-transform: uppercase; background-color: green; color: white; border: none; padding: 10px 20px; cursor: pointer;") }}
+    </div>
+</form>
+
+
+
+{% endblock %}
